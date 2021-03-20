@@ -1,0 +1,244 @@
+[
+    {"id": 1 ,
+    "nombre": "La Tagliatella",
+    "tipo": "Italiana",
+    "barrio": "Eixample",
+    "calificacion": 7.9,
+    "precioMedio": 35,
+    "oferta": false 
+    },
+
+    {"id": 2 , 
+    "nombre": "Luigi",
+    "tipo": "Italiana",
+    "barrio": "Gracia",
+    "calificacion": 8.3,
+    "precioMedio": 20,
+    "oferta": false 
+    },
+
+    {"id": 3 ,
+    "nombre": "Galo Nero",
+    "tipo": "Italiana",
+    "barrio": "Born",
+    "calificacion": 9.7,
+    "precioMedio": 32,
+    "oferta": false 
+    },
+
+    {"id": 4 ,
+    "nombre": "La Gastronómica",
+    "tipo": "Española",
+    "barrio": "Eixample",
+    "calificacion": 8.5,
+    "precioMedio": 23,
+    "oferta": false 
+    },
+
+    {"id": 5 ,
+    "nombre": "Foc i Ol",
+    "tipo": "Española",
+    "barrio": "Raval",
+    "calificacion": 7.9,
+    "precioMedio": 40,
+    "oferta": false 
+    },
+
+    {"id": 6 ,
+    "nombre": "El jardinet de Aribau",
+    "tipo": "Española",
+    "barrio": "Eixample",
+    "calificacion": 9.9,
+    "precioMedio": 55,
+    "oferta": false 
+    },
+
+    {"id": 7 ,
+    "nombre": "La Cantina Mexicana",
+    "tipo": "Mexicana",
+    "barrio": "Les Corts",
+    "calificacion": 8.8,
+    "precioMedio": 35,
+    "oferta": false 
+    },
+
+    {"id": 8 ,
+    "nombre": "The Box",
+    "tipo": "Mexicana",
+    "barrio": "Gracia",
+    "calificacion": 9.3,
+    "precioMedio": 45,
+    "oferta": false 
+    },
+
+    {"id": 9 ,
+    "nombre": "Chilangos Taquería",
+    "tipo": "Mexicana",
+    "barrio": "Born",
+    "calificacion": 7.8,
+    "precioMedio": 28,
+    "oferta": false 
+    }, 
+
+    {"id": 10 ,
+    "nombre": "La Cachapera",
+    "tipo": "Venezolana",
+    "barrio": "Eixample",
+    "calificacion": 7.9,
+    "precioMedio": 45,
+    "oferta": false 
+    },
+
+    {"id": 11 ,
+    "nombre": "La Areperia",
+    "tipo": "Venezolana",
+    "barrio": "Gracia",
+    "calificacion": 8.7,
+    "precioMedio": 53,
+    "oferta": false 
+    },
+
+    {"id": 12 ,
+    "nombre": "Rangoli",
+    "tipo": "Asiatica",
+    "barrio": "Eixample",
+    "calificacion": 10,
+    "precioMedio": 60,
+    "oferta": false 
+    },
+
+    {"id": 13 ,
+    "nombre": "Bembi",
+    "tipo": "Asiatica",
+    "barrio": "Les Corts",
+    "calificacion": 9.3,
+    "precioMedio": 38,
+    "oferta": false 
+    },
+
+    {"id": 14 ,
+    "nombre": "Sun Taka Sushi",
+    "tipo": "Asiatica",
+    "barrio": "Sarria",
+    "calificacion": 7.9,
+    "precioMedio": 34,
+    "oferta": false 
+    },
+
+    {"id": 15 ,
+    "nombre": "Stix Sushi Bar",
+    "tipo": "Asiatica",
+    "barrio": "Gracia",
+    "calificacion": 8.6,
+    "precioMedio": 38,
+    "oferta": false 
+    },
+
+    {"id": 16 ,
+    "nombre": "Out of India",
+    "tipo": "India",
+    "barrio": "Gotico",
+    "calificacion": 8.9,
+    "precioMedio": 28,
+    "oferta": false
+    },
+
+    {"id": 17 ,
+    "nombre": "Rasoi",
+    "tipo": "India",
+    "barrio": "Born",
+    "calificacion": 9.5,
+    "precioMedio": 32,
+    "oferta": false 
+    },
+
+    {"id": 18 ,
+    "nombre": "Little India",
+    "tipo": "India",
+    "barrio": "Les Corts",
+    "calificacion": 9.8,
+    "precioMedio": 22,
+    "oferta": false 
+    },
+
+    {"id": 19 ,
+    "nombre": "Dhaba",
+    "tipo": "India",
+    "barrio": "Sarria",
+    "calificacion": 8.7,
+    "precioMedio": 20,
+    "oferta": false 
+    },
+
+    {"id": 20 ,
+    "nombre": "Le Romane",
+    "tipo": "Italiana",
+    "barrio": "Gotico",
+    "calificacion": 9.1,
+    "precioMedio": 18,
+    "oferta": false
+    },
+
+    {"id": 21 ,
+    "nombre": "Musiu",
+    "tipo": "Italiana",
+    "barrio": "Sarria",
+    "calificacion": 8.9,
+    "precioMedio": 25,
+    "oferta": false 
+    },
+
+    {"id": 22 ,
+    "nombre": "Cinco Jotas",
+    "tipo": "Española",
+    "barrio": "Raval",
+    "calificacion": 8.5,
+    "precioMedio": 38,
+    "oferta": false 
+    },
+
+    {"id": 23 ,
+    "nombre": "Tram Tram",
+    "tipo": "Española",
+    "barrio": "Eixample",
+    "calificacion": 9.6,
+    "precioMedio": 46,
+    "oferta": false 
+    }, 
+
+    {"id": 24 ,
+    "nombre": "Buena Morena",
+    "tipo": "Mexicana",
+    "barrio": "Gotico",
+    "calificacion": 7.8,
+    "precioMedio": 60,
+    "oferta": false 
+    },
+
+    {"id": 25 ,
+    "nombre": "Chilangos",
+    "tipo": "Mexicana",
+    "barrio": "Raval",
+    "calificacion": 9.2,
+    "precioMedio": 42, 
+    "oferta": false
+    },
+
+    {"id": 26 ,
+    "nombre": "Medio o Pinto",
+    "tipo": "Venezolana",
+    "barrio": "Les Corts",
+    "calificacion": 8.6,
+    "precioMedio": 18,
+    "oferta": false 
+    },
+
+    {"id": 27 ,
+    "nombre": "El Maracucho",
+    "tipo": "Venezolana",
+    "barrio": "Montjuic",
+    "calificacion": 7.9,
+    "precioMedio": 18,
+    "oferta": false 
+    }
+]

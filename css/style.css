@@ -1,0 +1,370 @@
+.container-fluid .text-marca {
+  color: #f13c20 !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-outline-secondary {
+  border-color: #f13c20 !important;
+  color: #f13c20 !important;
+}
+.btn-outline-secondary:hover {
+  background-color: #f13c20 !important;
+  border: none;
+  color: white !important;
+}
+
+.home-menu {
+  padding-top: 6.3rem;
+  padding-bottom: 6rem;
+}
+.home-menu .container-home {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+}
+.home-menu .container-home .buscador-reserva {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.home-menu .container-home .buscador-reserva .titulo-home {
+  font-size: 3rem;
+  color: #f13c20;
+}
+.home-menu .container-home .buscador-reserva .what-container, .home-menu .container-home .buscador-reserva .where-container {
+  font-weight: 400;
+  color: #545E75;
+}
+.home-menu .container-home .img-home {
+  width: 30%;
+}
+
+.container-buscador-header {
+  border-radius: 30px;
+  border: 1px solid whitesmoke;
+  width: 40% !important;
+  padding: 1px;
+}
+.container-buscador-header .buscador-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-buscador-header .buscador-header p {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #545E75;
+}
+.container-buscador-header .buscador-header input {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #545E75;
+  border-radius: 40px;
+  border: none;
+  padding: 0.6rem;
+}
+.container-buscador-header .buscador-header #btn-submit-header {
+  background-color: transparent;
+  border: none;
+}
+.container-buscador-header .buscador-header .submit-btn-header {
+  border: 1px solid #f13c20;
+  color: #f13c20;
+  border-radius: 50px;
+  background-color: #f13c20;
+  padding: 0.8rem;
+}
+.container-buscador-header .buscador-header .submit-btn-header:hover {
+  background-color: #f13c20;
+  color: #f13c20;
+}
+
+.container-autocomplete-header {
+  display: none;
+  width: 30% !important;
+  position: absolute;
+  z-index: 9999;
+  left: 317px;
+  top: 55px;
+  border-radius: 10px;
+  overflow-y: auto;
+  height: 200px;
+}
+.container-autocomplete-header .autocomplete-find {
+  list-style: none;
+  border-radius: 10px;
+  padding-left: 0;
+}
+.container-autocomplete-header .autocomplete-find li {
+  background-color: white;
+  padding: 10px;
+  padding-left: 1.5rem;
+}
+.container-autocomplete-header .autocomplete-find li:first-child {
+  padding-top: 20px;
+}
+.container-autocomplete-header .autocomplete-find li:hover {
+  background-color: #efefef;
+  border: none;
+  border-radius: 10px;
+}
+.container-autocomplete-header .autocomplete-find li a {
+  text-decoration: none;
+  color: #545E75;
+}
+.container-autocomplete-header .autocomplete-find li i {
+  margin-right: 12px;
+  color: #545E75;
+}
+
+.section-cards .nav-filtros .lista-filtros {
+  display: flex;
+}
+.section-cards .nav-filtros .lista-filtros .btn-filtro {
+  border: 1px solid #f13c20;
+  border-radius: 15px;
+  padding: 0.4rem;
+  color: #f13c20;
+  font-size: 0.9rem;
+}
+.section-cards .nav-filtros .lista-filtros .btn-filtro:hover {
+  background-color: #f13c20;
+  color: white;
+}
+.section-cards .nav-filtros li {
+  margin-right: 1rem;
+  list-style: none;
+}
+.section-cards .todas-cards {
+  margin-left: 10%;
+}
+.section-cards .todas-cards h2:hover {
+  cursor: pointer;
+}
+.section-cards .todas-cards .btnFavoritos {
+  color: #545E75;
+}
+.section-cards .todas-cards .btnFavoritos:hover {
+  color: #f13c20;
+  transform: scale(1.4);
+}
+
+.fotoFav {
+  width: 150px;
+}
+
+.btn-confirm {
+  border: 1px solid #f13c20;
+  border-radius: 15px;
+  padding: 0.4rem;
+  color: #f13c20;
+  font-size: 1rem;
+  background-color: transparent;
+}
+.btn-confirm:hover {
+  background-color: #f13c20;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-header {
+  font-size: 15px;
+  background-color: transparent;
+  position: relative;
+  z-index: 5;
+  color: white;
+}
+.container-header .brand-name {
+  font-size: 35px;
+}
+.container-header a {
+  text-decoration: none;
+  color: white;
+}
+.container-header a:hover {
+  color: #f13c20;
+}
+.container-header .user-login {
+  margin-left: 2rem;
+  font-size: 25px;
+  background-color: transparent;
+  border: none;
+}
+.container-header .user-login .dropdown-user a {
+  color: #545E75 !important;
+}
+.container-header #divFavoritos {
+  width: 25rem !important;
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+.container-header #divFavoritos .div-fav {
+  width: 8rem;
+  text-align: left;
+}
+.container-header #divFavoritos .btn-favorito {
+  border: 1px solid #f13c20;
+  border-radius: 10px;
+  padding: 3.5px;
+  color: #f13c20;
+  font-size: 0.9rem;
+}
+.container-header #divFavoritos .btn-favorito:hover {
+  background-color: #f13c20;
+  color: white;
+}
+
+.find-header {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.find-header a {
+  text-decoration: none;
+  color: #f13c20;
+}
+.find-header a:hover {
+  text-decoration: underline;
+  color: #f13c20;
+}
+.find-header #divFavoritos {
+  width: 20rem;
+}
+.find-header #divFavoritos .btn-favorito {
+  border: 1px solid #f13c20;
+  border-radius: 10px;
+  padding: 3.5px;
+  color: #f13c20;
+  font-size: 0.9rem;
+}
+.find-header #divFavoritos .btn-favorito:hover {
+  background-color: #f13c20;
+  color: white;
+}
+
+.title-fav {
+  font-size: 1.5rem !important;
+  margin-bottom: 0%;
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  background-image: url(../images/louis-hansel-shotsoflouis-wVoP_Q2Bg_A-unsplash.jpg);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home .container-titulo {
+  position: relative;
+  z-index: 0;
+  top: -12rem;
+}
+.home .container-titulo .titulo-home {
+  margin-top: 7%;
+  color: whitesmoke;
+  font-weight: 800;
+  font-size: 2.8rem;
+  line-height: 1.3;
+}
+.home .container-titulo .ver-todos {
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+.home .container-titulo .ver-todos a {
+  text-decoration: none;
+  color: #f13c20;
+}
+.home .container-titulo .ver-todos a:hover {
+  color: whitesmoke;
+}
+.home .container-buscador {
+  border-radius: 50px;
+  background-color: whitesmoke;
+  width: 70% !important;
+  padding: 10px;
+  margin-top: 4rem;
+}
+.home .container-buscador .buscador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .container-buscador .buscador p {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #545E75;
+}
+.home .container-buscador .buscador input {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #545E75;
+  border-radius: 40px;
+  border: none;
+  padding: 0.6rem;
+}
+.home .container-buscador .buscador #btn-submit {
+  background-color: transparent;
+  border: none;
+  margin-top: 0.8rem;
+  margin-left: 1rem;
+}
+.home .container-buscador .buscador .btn-submit {
+  border: thin solid #f13c20;
+  color: #f13c20;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 0.8rem;
+}
+.home .container-buscador .buscador .btn-submit:hover {
+  background-color: #f13c20;
+  color: white;
+}
+.home .container-autocomplete {
+  width: 50%;
+  position: relative;
+  z-index: 9999;
+  left: -50px;
+  top: -10px;
+  border-radius: 10px;
+  overflow-y: auto;
+  height: 200px;
+}
+.home .container-autocomplete .autocomplete {
+  list-style: none;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+.home .container-autocomplete .autocomplete li {
+  padding: 10px;
+}
+.home .container-autocomplete .autocomplete li:first-child {
+  padding-top: 20px;
+}
+.home .container-autocomplete .autocomplete li:hover {
+  background-color: #efefef;
+  border: none;
+  border-radius: 10px;
+}
+.home .container-autocomplete .autocomplete li a {
+  text-decoration: none;
+  color: #545E75;
+}
+.home .container-autocomplete .autocomplete li i {
+  margin-right: 12px;
+  color: #545E75;
+}
+
+/*# sourceMappingURL=style.css.map */
