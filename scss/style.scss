@@ -141,18 +141,20 @@
         }
     
         .ver-todos{
+            border: 1px solid $colorPrincipal;
             border-radius: 30px;
             display: flex;
             align-items: center;
-    
-            a{
-                text-decoration: none;
-                color: $colorPrincipal;
-    
-                &:hover{
-                    color: whitesmoke;
-                }
+            width: 6.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: $colorPrincipal;
+
+            &:hover{
+                background-color: $colorPrincipal;
+                color: whitesmoke;
             }
+
         }
     }
     

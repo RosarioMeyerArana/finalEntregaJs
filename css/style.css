@@ -278,15 +278,17 @@
   line-height: 1.3;
 }
 .home .container-titulo .ver-todos {
+  border: 1px solid #f13c20;
   border-radius: 30px;
   display: flex;
   align-items: center;
-}
-.home .container-titulo .ver-todos a {
+  width: 6.5rem;
+  text-align: center;
   text-decoration: none;
   color: #f13c20;
 }
-.home .container-titulo .ver-todos a:hover {
+.home .container-titulo .ver-todos:hover {
+  background-color: #f13c20;
   color: whitesmoke;
 }
 .home .container-buscador {

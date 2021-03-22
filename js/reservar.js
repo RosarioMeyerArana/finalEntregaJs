@@ -1,11 +1,28 @@
 let pedidos = [];
+let horarioDisponible = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
+
 
 const inputPedidos = localStorage.pedidos ? JSON.parse(localStorage.pedidos) : [];
 
 let numeroComensales = $("#inputPersonas").value
-let diaSeleccionado = $("#inputDia").value
-let horaSeleccionada = $("#inputHora").value
+let diaSeleccionado = $("#seleccionDia").value
+let horaSeleccionada = $("#seleccionHora").value
 let restaurantSeleccionado
+
+
+
+function disponibleHorario(){
+   $("#seleccionHora").empty();
+
+   horarioDisponible.forEach(horario => {
+    $("#seleccionHora").append(
+        `<option value"${horario}">${horario}</option>`
+    )
+   })
+}
+
+
+
 
 
 function tomoInputs(e){
@@ -61,21 +78,14 @@ function modalShow(index){
                                         <div class="seleccion-dia mt-4 "> 
                                         <p>Seleccione el día a reservar</p>
                                             <div class="col-8">
-                                                <input class="form-control" type="date" name="" id="inputDia">
+                                                <input class="form-control" type="date" name="" id="seleccionDia">
                                             </div>
                                         </div>
                                         <div class="seleccion-horario mt-4"> 
                                         <p>Seleccione el horario</p>
                                             <div class="col-8">
-                                            <select class="form-control" name="" id="inputHora">
-                                            <option value="">19:30</option>
-                                            <option value="">20:00</option>
-                                            <option value="">20:30</option>
-                                            <option value="">21:00</option>
-                                            <option value="">21:30</option>
-                                            <option value="">22:00</option>
-                                            <option value="">22:30</option>
-                                            </select>
+                                            <select class="form-control" name="" id="seleccionHora">
+                                            ${disponibleHorario}</select>
                                             </div>
                                         </div>
                                     </form>
