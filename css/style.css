@@ -318,8 +318,7 @@
 .home .container-buscador .buscador #btn-submit {
   background-color: transparent;
   border: none;
-  margin-top: 0.8rem;
-  margin-left: 1rem;
+  margin-top: 1.2rem;
 }
 .home .container-buscador .buscador .btn-submit {
   border: thin solid #f13c20;

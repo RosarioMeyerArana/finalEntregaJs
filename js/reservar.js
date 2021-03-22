@@ -1,30 +1,32 @@
-console.log(moment().calendar());
-
 let pedidos = [];
 
 const inputPedidos = localStorage.pedidos ? JSON.parse(localStorage.pedidos) : [];
 
-let inputPersonas = $("#inputPersonas").value
-let inputDia = $("#inputDia").value
-let inputHora = $("#inputHora").value
+let numeroComensales = $("#inputPersonas").value
+let diaSeleccionado = $("#inputDia").value
+let horaSeleccionada = $("#inputHora").value
+let restaurantSeleccionado
+
 
 function tomoInputs(e){
     e.preventDefault();
-
-    
-
     
 }
 
-class pedidos {
-        constructor (inputPersonas, inputDia, inputHora){
-            this.personas = inputPersonas,
-            this.dia = inputDia,
-            this.hora = inputHora
-            }
+// OBJETO PEDIDOS //
 
-            function 
+let pedidosRealizados = [];
+
+ class Pedidos {
+    constructor (restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales) { 
+    this.nombre = restaurantSeleccionado,
+    this.date = diaSeleccionado,
+    this.hora = horaSeleccionada,
+    this.personas = numeroComensales,
+    this.reservado = false
+    }
 }
+
 
 
 // ----------> FUNCION MODAL <----------- //

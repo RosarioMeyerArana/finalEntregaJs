@@ -23,58 +23,54 @@ let textoBuscador = document.querySelector("#restaurant-name");
 let resultado = document.querySelector(".autocomplete");
 
 
-// tomo el boton input
+// FX PREVENT DEFAULT //
 
-const btnSubmit = document.querySelector("#btn-submit");
-btnSubmit.onclick = (e) => {
-    e.preventDefault();
-} 
-
-let encontrados = [];
-let encontradosTipo = []
+function preventDefault (e){
+    e.preventDefault()
+}
 
 
-// FUNCION BUSCADORA SEARCHBAR //
 
- function buscadorPrincipal(){
-    resultado.innerHTML = "";
-    let textoIngresado = textoBuscador.value;
-    
-    encontrados = [];
-    encontrados = restos.filter(i => i.nombre.toUpperCase().includes(textoIngresado.toUpperCase()));
 
-    if(textoIngresado.length == 0){
-        resultado.innerHTML = "";
-    }else{
-        encontrados.forEach( item => {
-            resultado.innerHTML += `<li id="${item.id}">
-                                        <i class="fas fa-utensils"></i> <a href="find.html" onclick="buscadorItem(${item.nombre})">${item.nombre}</a>
-                                    </li>`
-        });
+// ----------> LINK DEL SEARCHBAR <----------- //
+
+let itemBuscado;
+
+function llevoStorage(){
+   itemBuscado = sessionStorage.setItem("clickOpcion", $(".liSearch").value)
+}
+
+function buscoStorage(){
+
+    itemBuscado = parse(sessionStorage.getItem)
+     if (buscoItem){
+       linkItem(itemBuscado)
+        } else {
+       nuevaCard(); 
+        }
     }
 
- }
-
-
-// evento del buscador => onkeyup // 
-
-textoBuscador.onkeyup = () => buscadorPrincipal().show();
 
 
 
-function buscadorItem(item){
+//  CARDS DEL BUSCADOR   //
+   
+
+function linkItem(nombre){
     $("#todosCards").empty();
 
-    restos.find(i => i.nombre === item)
+    itemBuscado = restos.find(i => i.nombre === nombre);
 
-    let itemBuscado = restos[item]
+// let itemBuscado = restos[item];
+
+    console.log(nombre);
 
     $("#todosCards").append(
     `<div class="mt-4">
            <div class="card shadow ${itemBuscado.tipo}" style="max-width: 540px;">
                <div class="row g-0">
                    <div class="col-md-5">
-                   <img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="card-img-top" alt="...">
+                   <img src="images/restaurant-${itemBuscado.id}.jpg" class="card-img-top" alt="${itemBuscado.nombre}">
                </div>
                <div class="col-md-7">
                    <div class="card-body">
@@ -98,18 +94,30 @@ function buscadorItem(item){
        );
 }
 
-// OBJETO PEDIDOS //
 
-let pedidosRealizados = [];
 
- class Pedidos {
-    constructor (restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales) { 
-    this.nombre = restaurantSeleccionado,
-    this.date = diaSeleccionado,
-    this.hora = horaSeleccionada,
-    this.personas = numeroComensales,
-    this.oferta = false,
-    this.reservado = false
+let encontrados = [];
+
+
+// FUNCION BUSCADORA SEARCHBAR //
+
+ function buscadorPrincipal(){
+    resultado.innerHTML = "";
+    let textoIngresado = textoBuscador.value;
+    
+    encontrados = [];
+    encontrados = restos.filter(i => i.nombre.toUpperCase().includes(textoIngresado.toUpperCase()));
+
+    if(textoIngresado.length == 0){
+        resultado.innerHTML = "";
+    }else{
+        encontrados.forEach( item => {
+            resultado.innerHTML += `<li id="${item.id} class="liSearch">
+                                        <i class="fas fa-utensils"></i> <a href="find.html" onclick="linkItem(${item.nombre}); preventDefault(event)">${item.nombre}</a>
+                                    </li>`
+        });
     }
-}
+
+ }
+
 

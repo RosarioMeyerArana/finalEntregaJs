@@ -82,11 +82,11 @@
         <div class="container-buscador container shadow">
             <form id="form-search" class="buscador row" autocomplete="off">
                 <div class="input-name col-10">
-                    <p class="mb-1">¿Dónde quieres comer?</p>
-                    <input class="col-12" type="text" name="restaurant-name" id="restaurant-name" placeholder="Nombre o tipo de comida">
+                    <p class="mb-2">¿Dónde quieres comer?</p>
+                    <input class="col-12" type="text" name="restaurant-name" id="restaurant-name" placeholder="Nombre o tipo de comida" onkeyup="buscadorPrincipal()">
                 </div>
 
-                <button id="btn-submit" class="submit-btn col-1">
+                <button id="btn-submit" class="submit-btn col-1" onclick="preventDefault(event)">
                     <i class="fas fa-search btn-submit"></i>
                 </button>
             </form> 
