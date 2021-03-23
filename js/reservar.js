@@ -1,49 +1,73 @@
-let pedidos = [];
+
 let horarioDisponible = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
 
 
 const inputPedidos = localStorage.pedidos ? JSON.parse(localStorage.pedidos) : [];
 
-let numeroComensales = $("#inputPersonas").value
-let diaSeleccionado = $("#seleccionDia").value
-let horaSeleccionada = $("#seleccionHora").value
-let restaurantSeleccionado
+// OBJETO PEDIDOS //
 
 
 
-function disponibleHorario(){
-   $("#seleccionHora").empty();
+class Pedidos {
+    constructor (restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales) { 
+    this.nombre = restaurantSeleccionado,
+    this.date = diaSeleccionado,
+    this.hora = horaSeleccionada,
+    this.personas = numeroComensales,
+    this.reservado = true
 
-   horarioDisponible.forEach(horario => {
-    $("#seleccionHora").append(
-        `<option value"${horario}">${horario}</option>`
-    )
-   })
+    }
 }
-
-
 
 
 
 function tomoInputs(e){
     e.preventDefault();
     
+    let numeroComensales = $('#inputPersonas option:selected').text();
+    let diaSeleccionado = $('#seleccionDia').val().split("-");
+    let horaSeleccionada = $('#seleccionHora option:selected').value();
+    let restaurantSeleccionado 
+    
+    inputPedidos.push(new Pedidos(restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales));
+    localStorage.pedidos = JSON.stringify(inputPedidos);
+    
 }
 
-// OBJETO PEDIDOS //
 
-let pedidosRealizados = [];
 
- class Pedidos {
-    constructor (restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales) { 
-    this.nombre = restaurantSeleccionado,
-    this.date = diaSeleccionado,
-    this.hora = horaSeleccionada,
-    this.personas = numeroComensales,
-    this.reservado = false
+function disponibleHorario(){
+    $("#seleccionHora").empty();
+
+    for (let i = 0; i < inputPedidos.length; i++) {
+        const horarioTomado = inputPedidos[i].hora;
+        
     }
-}
+    
+    horarioDisponible.filter(i => i)
+ 
+    horarioDisponible.forEach(horario => {
+     $("#seleccionHora").append(
+         `<option value"${horario}">${horario}</option>`
+     )
+    })
+ }
 
+
+ function confirmaPedido() {
+        localStorage.pedidos = JSON.stringify(inputPedidos)
+         tomoDiv.innerHTML = '';
+         inputPedidos.forEach(pedido => {
+             creoPedido = document.createElement("div");
+             creoPedido.classList.add = "bg-light"
+             creoPedido.append(`<div>
+                                    <p> <stong> Gracias por reservar con nosotros! </strong> <br>
+                                  Tu reserva se realizó para el restaurant ${pedido.nombre}, 
+                                 el día ${pedido.date} a las ${pedido.hora} para ${pedido.personas} personas. </p>
+                                 <button class="btn-confirmar btn-outline-secondary">Confirmar</button> <button id="btn-cancel" class="btn-cancel btn-outline-secondary" onclick='cancelElement(${inputPedidos.indexOf(pedido)})'>Cancelar</button>
+                                 </div>`)
+             
+         })
 
 
 // ----------> FUNCION MODAL <----------- //
@@ -64,14 +88,14 @@ function modalShow(index){
                                             <p>Seleccione la cantidad de personas</p>
                                             <div class="col-1">
                                             <select class="form-control" name="" id="inputPersonas">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                            <option value="">6</option>
-                                            <option value="">7</option>
-                                            <option value="">8</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
                                             </select>
                                             </div>
                                         </div>    
@@ -90,7 +114,7 @@ function modalShow(index){
                                         </div>
                                     </form>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn-confirm">Confirmar</button>
+                                        <button type="button" class="btn-confirm" onclick="tomoInputs(e)">Confirmar</button>
                                     </div>
                                     </div>
                                 </div>
@@ -99,9 +123,10 @@ function modalShow(index){
 }
 
 
+
+
+
 // ARRAY PEDIDOS //
-
-
 
 // const tomoDiv = document.querySelector("#pedido");
 
@@ -110,13 +135,7 @@ function modalShow(index){
 
 // let inputRestaurant = document.getElementById("restaurant-name").value
 
-//  function takeInputs(e) {
-//      e.preventDefault();
-// let inputRestaurant = document.getElementById("restaurant-name").value;
-//     let inputDate = document.getElementById("date").value;
-//     let inputTime = document.getElementById("time").value;
-//     let inputNumber = document.getElementById("number").value;
-
+ 
 //     let exists = restos.find(item => item.nombre === inputRestaurant)
 //     if (exists == undefined){
 //         console.log("no existe");
@@ -125,7 +144,6 @@ function modalShow(index){
 //         localStorage.pedidos = JSON.stringify(inputPedidos);
 //         divPedidos();
 //    }
-// }
 
 
 // let creoPedido;
