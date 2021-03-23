@@ -80,6 +80,26 @@ function buscadorPrincipal(){
 
 
 
+ // ----------> OFERTA <----------- //
+
+let ofertas = []
+
+function ofertados(){
+ for(i = 0; i < restos.length ; i++){
+     if(restos[i].nombre.startsWith("La")){
+         restos[i].oferta = true;
+        }
+
+        if (restos[i].oferta === true){
+            $(".badges").append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`)
+        }    
+        
+     }
+}
+ofertados();
+
+
+
 document.addEventListener('DOMContentLoaded', cargaInicial);
 
 function cargaInicial() {
@@ -129,38 +149,17 @@ function cargaInicial() {
 }
 
 
-// funcion buscador //
+// ----------> FUNC BUSCADOR - TOMO DEL STORAGE <----------- //
 
-// function sacoStorage(){
+ function sacoStorage(){
 
-// let buscoItem = parse(sessionStorage.getItem)
-//  if (buscoItem){
-//    inkItem(buscoItem)
-//     } else {
-//    nuevaCard(); 
-//     }
-// }
-
-// ----------> OFERTA <----------- //
-
-let ofertas = []
-
-function ofertados(){
- for(i = 0; i < restos.length ; i++){
-     if(restos[i].nombre.startsWith("La")){
-         restos[i].oferta = true;
-        }
-
-       // if (restos[i].oferta === true){
-       //     $(".badges").append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`)
-       // }    
-        
-     }
+let buscoItem = parse(sessionStorage.getItem)
+ if (buscoItem){
+   inkItem(buscoItem)
+    } else {
+   nuevaCard(); 
+    }
 }
-ofertados();
-
- 
-
 
 
 

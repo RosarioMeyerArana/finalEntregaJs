@@ -18,7 +18,7 @@ function cargaInicial() {
 }
 
 
-// const textoBuscador = document.querySelector(".restaurantName");
+
 let textoBuscador = document.querySelector("#restaurant-name");
 let resultado = document.querySelector(".autocomplete");
 
@@ -28,7 +28,6 @@ let resultado = document.querySelector(".autocomplete");
 function preventDefault (e){
     e.preventDefault()
 }
-
 
 
 
@@ -52,8 +51,7 @@ function buscoStorage(){
 
 
 
-
-//  CARDS DEL BUSCADOR   //
+// ----------> CARDS DEL BUSCADOR <----------- //
    
 
 function linkItem(nombre){
@@ -61,7 +59,7 @@ function linkItem(nombre){
 
     itemBuscado = restos.find(i => i.nombre === nombre);
 
-// let itemBuscado = restos[item];
+   // itemBuscado = restos[item];
 
     console.log(nombre);
 
@@ -99,7 +97,7 @@ function linkItem(nombre){
 let encontrados = [];
 
 
-// FUNCION BUSCADORA SEARCHBAR //
+// ----------> FUNCION BUSCADORA ITEMS EN SEARCHBAR <----------- //
 
  function buscadorPrincipal(){
     resultado.innerHTML = "";

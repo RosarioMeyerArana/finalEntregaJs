@@ -36,23 +36,6 @@ function tomoInputs(e){
 
 
 
-function disponibleHorario(){
-    $("#seleccionHora").empty();
-
-    for (let i = 0; i < inputPedidos.length; i++) {
-        const horarioTomado = inputPedidos[i].hora;
-        
-    }
-    
-    horarioDisponible.filter(i => i)
- 
-    horarioDisponible.forEach(horario => {
-     $("#seleccionHora").append(
-         `<option value"${horario}">${horario}</option>`
-     )
-    })
- }
-
 
  function confirmaPedido() {
         localStorage.pedidos = JSON.stringify(inputPedidos)
@@ -68,6 +51,7 @@ function disponibleHorario(){
                                  </div>`)
              
          })
+    }     
 
 
 // ----------> FUNCION MODAL <----------- //
@@ -109,7 +93,7 @@ function modalShow(index){
                                         <p>Seleccione el horario</p>
                                             <div class="col-8">
                                             <select class="form-control" name="" id="seleccionHora">
-                                            ${disponibleHorario}</select>
+                                            ${disponibleHorario()}</select>
                                             </div>
                                         </div>
                                     </form>
@@ -122,7 +106,21 @@ function modalShow(index){
     $("#exampleModal").modal("show");
 }
 
+function disponibleHorario(){
+    html = "";
 
+    // for (let i = 0; i < inputPedidos.length; i++) {
+    //     const horarioTomado = inputPedidos[i].hora;
+    // }
+    
+    //horarioDisponible.filter(i => i)
+ 
+    horarioDisponible.forEach(horario => {
+     html += `<option value"${horario}">${horario}</option>`
+    })
+
+    return html
+ }
 
 
 
@@ -175,5 +173,3 @@ function modalShow(index){
 // }
 
 // $("btnCancel").click(cancelElement);
-
-
