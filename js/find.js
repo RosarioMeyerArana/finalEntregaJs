@@ -1,5 +1,7 @@
 restos = [];
 
+let buscadoIndex = localStorage.buscado ? JSON.parse(localStorage.getItem("buscado")) : false;
+
 let filtroEspaniola
 let filtroItaliana
 let filtroMexicana
@@ -54,49 +56,51 @@ let plus50 = document.getElementById("plus50");
 
 // ----------> FUNCION BUSCADORA SEARCHBAR <----------- //
 
+
 let resultadoFind = document.querySelector(".autocomplete-find");
 let inputTexto = document.querySelector("#restaurant-name-find")
 
-function buscadorPrincipal(){
+function buscadorPrincipal() {
     resultadoFind.innerHTML = "";
     let textoIngresado = inputTexto.value;
-    
+
     $(".autocomplete-find").parent().show();
-    
+
     encontrados = [];
     encontrados = restos.filter(i => i.nombre.toUpperCase().includes(textoIngresado.toUpperCase()));
 
-    if(textoIngresado.length == 0){
+    if (textoIngresado.length == 0) {
         resultadoFind.innerHTML = "";
         $(".autocomplete-find").parent().hide();
-    }else{
-        encontrados.forEach( item => {
+    } else {
+        encontrados.forEach(item => {
             resultadoFind.innerHTML += `<li id="${item.id}">
-                                        <i class="fas fa-utensils"></i> <a href="" onclick="preventDefault(event);linkItem(${item.nombre})">${item.nombre}</a>
+                                        <i class="fas fa-utensils"></i> <a href="find.html" onclick="preventDefault(event);linkItem(${item.nombre})">${item.nombre}</a>
                                     </li>`
         });
     }
- }
+}
 
 
 
- // ----------> OFERTA <----------- //
+// ----------> OFERTA <----------- //
 
 let ofertas = []
 
-function ofertados(){
- for(i = 0; i < restos.length ; i++){
-     if(restos[i].nombre.startsWith("La")){
-         restos[i].oferta = true;
+function ofertados() {
+    for (let i = 0; i < restos.length; i++) {
+        if (restos[i].nombre.startsWith("La")) {
+            restos[i].oferta = true;
         }
 
-        if (restos[i].oferta === true){
-            $(".badges").append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`)
-        }    
-        
-     }
+        if (restos[i].oferta === true) {
+           
+            $(".badges").append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
+        }
+
+    }
 }
-ofertados();
+
 
 
 
@@ -108,7 +112,13 @@ function cargaInicial() {
         success: function (response) {
             console.log(response)
             restos = response;
-            nuevaCard();
+            if (buscadoIndex) {
+                let prueba = restos.findIndex(i => i.id == buscadoIndex.id)
+                filtroBuscado(prueba)
+                localStorage.removeItem("buscado")
+            } else {
+                nuevaCard();
+            }
             buscadorPrincipal();
             ofertados()
 
@@ -151,57 +161,15 @@ function cargaInicial() {
 
 // ----------> FUNC BUSCADOR - TOMO DEL STORAGE <----------- //
 
- function sacoStorage(){
+function sacoStorage() {
 
-let buscoItem = parse(sessionStorage.getItem)
- if (buscoItem){
-   inkItem(buscoItem)
+    let buscoItem = parse(sessionStorage.getItem)
+    if (buscoItem) {
+        inkItem(buscoItem)
     } else {
-   nuevaCard(); 
+        nuevaCard();
     }
 }
-
-
-
-// ----------> LINK DEL SEARCHBAR <----------- //
-
-// function linkItem(nombre){
-//     $("#todosCards").empty();
-
-//     itemBuscado = restos.find(i => i.nombre === nombre);
-
-// // let itemBuscado = restos[item];
-
-//     console.log(nombre);
-
-//     $("#todosCards").append(
-//     `<div class="mt-4">
-//            <div class="card shadow ${itemBuscado.tipo}" style="max-width: 540px;">
-//                <div class="row g-0">
-//                    <div class="col-md-5">
-//                    <img src="images/restaurant-${itemBuscado.id}.jpg" class="card-img-top" alt="${itemBuscado.nombre}">
-//                </div>
-//                <div class="col-md-7">
-//                    <div class="card-body">
-//                       <div class="d-flex justify-content-between"> 
-//                            <div>
-//                            <span class="badge rounded-pill bg-secondary mb-3">${itemBuscado.tipo.toUpperCase()}</span>
-//                            </div>
-//                            <p>	&#11088 ${itemBuscado.calificacion}</p>
-//                        </div>
-//                        <div class="d-flex align-items-center">
-//                            <h2 class="card-title"> ${itemBuscado.nombre}</h2>
-//                            <a id="${itemBuscado.id}" class="mx-2 btnFavoritos" onclick="preventDefault(event); agregarFavorito(${restos.indexOf(
-//                             resto)})" href=""><i class="far fa-heart"></i></a>
-//                        </div>
-//                    <p class="card-text text-muted"> ${itemBuscado.barrio}</p>
-//                    <p class="card-text"> Precio medio: €${itemBuscado.precioMedio}</p>
-//                    </div>
-//                </div>
-//            </div>
-//        </div> `
-//        );
-// }
 
 
 
@@ -230,8 +198,8 @@ function nuevaCard() {
                            <h2 class="card-title" onclick="modalShow(${restos.indexOf(resto)})"> ${resto.nombre}</h2>
                            <a id="${resto.id}" class="mx-2 btnFavoritos" onclick="preventDefault(event); agregarFavorito(${restos.indexOf(resto)})" href=""><i class="far fa-heart"></i></a>
                        </div>
-                   <p class="card-text text-muted"> ${resto.barrio}</p>
-                   <p class="card-text"> Precio medio: €${resto.precioMedio}</p>
+                   <p class="card-text text-muted my-0"> ${resto.barrio}</p>
+                   <p class="card-text my-0"> Precio medio: €${resto.precioMedio}</p>
                    </div>
                </div>
            </div>
@@ -275,6 +243,41 @@ function filtrosComida(filtro) {
                </div>
            </div>
        </div>`)
-    
+
     })
+}
+
+
+
+function filtroBuscado(index) {
+    let buscado = restos[index]
+    console.log(buscado);
+    $("#todosCards").empty();
+
+    $("#todosCards").append(
+        `<div class="mt-4">
+           <div class="card shadow ${buscado.tipo}" style="max-width: 540px;">
+               <div class="row g-0">
+                   <div class="col-md-5">
+                   <img src="images/restaurant-${buscado.id}.jpg" class="card-img-top" alt="...">
+               </div>
+               <div class="col-md-7">
+                   <div class="card-body">
+                      <div class="d-flex justify-content-between"> 
+                        <div class="badges">
+                           <span class="badge rounded-pill bg-secondary mb-3">${buscado.tipo.toUpperCase()}</span>
+                        </div>
+                           <p>	&#11088 ${buscado.calificacion}</p>
+                       </div>
+                       <div class="d-flex align-items-center">
+                           <h2 class="card-title" onclick="modalShow(${index})"> ${buscado.nombre}</h2>
+                           <a id="${buscado.id}" class="mx-2 btnFavoritos" onclick="preventDefault(event); agregarFavorito(${index})" href=""><i class="far fa-heart"></i></a>
+                       </div>
+                   <p class="card-text text-muted"> ${buscado.barrio}</p>
+                   <p class="card-text"> Precio medio: €${buscado.precioMedio}</p>
+                   </div>
+               </div>
+           </div>
+       </div>`)
+
 }

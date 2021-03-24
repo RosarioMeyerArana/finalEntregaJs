@@ -3,6 +3,7 @@
 @import "components/header";
 @import "components/home";
 @import "components/find";
+@import "base/extends";
 
 *{
     margin: 0;
@@ -82,6 +83,7 @@
     padding-right: 3rem !important;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    z-index: 5;
 
     a{
         text-decoration: none;
@@ -196,17 +198,11 @@
             }
 
             .btn-submit{
-               
-               border: thin solid $colorPrincipal;
-               color: $colorPrincipal;
+                @extend %buttons;
                border-radius: 50px;
-               background-color: transparent;
                padding: .8rem;
 
-               &:hover{
-                   background-color: $colorPrincipal;
-                   color: white;
-               }
+               
             }
         }
         

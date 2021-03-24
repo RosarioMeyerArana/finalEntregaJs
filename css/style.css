@@ -41,6 +41,18 @@
   width: 30%;
 }
 
+.home .container-buscador .buscador .btn-submit, .btn-confirm, .btn-cancel, .section-cards .nav-filtros .lista-filtros .btn-filtro {
+  border: 1px solid #f13c20;
+  border-radius: 15px;
+  padding: 0.4rem;
+  color: #f13c20;
+  background-color: transparent;
+}
+.home .container-buscador .buscador .btn-submit:hover, .btn-confirm:hover, .btn-cancel:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover {
+  background-color: #f13c20;
+  color: white;
+}
+
 .container-buscador-header {
   border-radius: 30px;
   border: 1px solid whitesmoke;
@@ -124,15 +136,7 @@
   display: flex;
 }
 .section-cards .nav-filtros .lista-filtros .btn-filtro {
-  border: 1px solid #f13c20;
-  border-radius: 15px;
-  padding: 0.4rem;
-  color: #f13c20;
   font-size: 0.9rem;
-}
-.section-cards .nav-filtros .lista-filtros .btn-filtro:hover {
-  background-color: #f13c20;
-  color: white;
 }
 .section-cards .nav-filtros li {
   margin-right: 1rem;
@@ -156,15 +160,18 @@
   width: 150px;
 }
 
-.btn-confirm {
+.btn-confirm, .btn-cancel {
+  font-size: 0.9rem;
+}
+
+.home .container-buscador .buscador .btn-submit, .section-cards .nav-filtros .lista-filtros .btn-filtro, .btn-confirm, .btn-cancel {
   border: 1px solid #f13c20;
   border-radius: 15px;
   padding: 0.4rem;
   color: #f13c20;
-  font-size: 1rem;
   background-color: transparent;
 }
-.btn-confirm:hover {
+.home .container-buscador .buscador .btn-submit:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover, .btn-confirm:hover, .btn-cancel:hover {
   background-color: #f13c20;
   color: white;
 }
@@ -227,6 +234,7 @@
   padding-right: 3rem !important;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  z-index: 5;
 }
 .find-header a {
   text-decoration: none;
@@ -323,15 +331,8 @@
   margin-top: 1.2rem;
 }
 .home .container-buscador .buscador .btn-submit {
-  border: thin solid #f13c20;
-  color: #f13c20;
   border-radius: 50px;
-  background-color: transparent;
   padding: 0.8rem;
-}
-.home .container-buscador .buscador .btn-submit:hover {
-  background-color: #f13c20;
-  color: white;
 }
 .home .container-autocomplete {
   width: 50%;

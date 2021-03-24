@@ -3,11 +3,8 @@ let favoritos = localStorage.favoritos ? JSON.parse(localStorage.favoritos) : []
 let divFavoritos = document.querySelector("#divFavoritos");
 
 
-// FUNCIONES DE LOS ONCLICK //
+// ----------> FUNCIONES ONCLICK <----------- //
 
-function preventDefault(e) {
-    e.preventDefault();
-}
 
 function agregarFavorito(index){
     let producto = restos[index];

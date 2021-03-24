@@ -1,5 +1,6 @@
 @import "../base/colors";
 @import "../base/fonts";
+@import "../base/extends";
 
 
 // --------- BUSCADOR EN HEADER --------- //
@@ -112,16 +113,8 @@
             display: flex;
             
             .btn-filtro{
-                border: 1px solid $colorPrincipal;
-                border-radius: 15px;
-                padding: .4rem;
-                color: $colorPrincipal;
+                @extend %buttons;
                 font-size: .9rem;
-
-                &:hover{
-                    background-color: $colorPrincipal;
-                    color: white;
-                }
 
             }
         }
@@ -162,16 +155,7 @@
 
 // ---------- MODAL ----------//
 
-.btn-confirm{
-    border: 1px solid $colorPrincipal;
-    border-radius: 15px;
-    padding: .4rem;
-    color: $colorPrincipal;
-    font-size: 1rem;
-    background-color: transparent;
-
-        &:hover{
-            background-color: $colorPrincipal;
-            color: white;
-        }
+.btn-confirm, .btn-cancel{
+    @extend %buttons;
+    font-size: .9rem;
 }
