@@ -92,8 +92,11 @@
         <!-- favoritos -->
         <a id="favoritos" class="user-login" id="dropdownFavoritos" data-bs-toggle="dropdown" aria-expanded="false"
           ><i class="far fa-heart"></i></a>
-        <div id="divFavoritos" class="dropdown-menu">
+        <div class="dropdown-menu">
           <li class="item-dropdown titleFavs fs-4 text ms-4">Mis Favoritos</li>
+          <div id="divFavoritos">
+            
+          </div>
         </div>
       </div>
     </div>
@@ -204,16 +207,20 @@
 
     <!-- MAPA -->
 
-    <aside class="map-aside shadow">
-      <iframe
+    <aside id="map" class="map-aside shadow">
+      <!-- <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1497943797503!2d2.1558630154259593!3d41.392553179263636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a291b998d777%3A0xf16316e3a8f81632!2sCalle%20Balmes%2C%20121%2C%2008008%20Barcelona!5e0!3m2!1ses!2ses!4v1614612183990!5m2!1ses!2ses"
-        width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </aside>
+        width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+      </aside>
   </div>
 
 
 
   <!-- SCRIPT -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhXYDuldOzt0BWvWTZRHMqWp3csCjoFag&callback=initMap">
+</script>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>

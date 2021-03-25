@@ -58,7 +58,8 @@ let plus50 = document.getElementById("plus50");
 
 
 let resultadoFind = document.querySelector(".autocomplete-find");
-let inputTexto = document.querySelector("#restaurant-name-find")
+let inputTexto = document.querySelector("#restaurant-name-find");
+
 
 function buscadorPrincipal() {
     resultadoFind.innerHTML = "";
@@ -75,10 +76,18 @@ function buscadorPrincipal() {
     } else {
         encontrados.forEach(item => {
             resultadoFind.innerHTML += `<li id="${item.id}">
-                                        <i class="fas fa-utensils"></i> <a href="find.html" onclick="preventDefault(event);linkItem(${item.nombre})">${item.nombre}</a>
+                                        <i class="fas fa-utensils"></i> <a href="find.html" onclick="preventDefault(event);findIndex(${item.id})">${item.nombre}</a>
                                     </li>`
         });
     }
+}
+
+
+function findIndex(id){
+
+    let prueba = restos.find(i => i.id == id)
+    
+    filtroBuscado(restos.indexOf(prueba))
 }
 
 
@@ -120,7 +129,8 @@ function cargaInicial() {
                 nuevaCard();
             }
             buscadorPrincipal();
-            ofertados()
+            ofertados();
+            listaFavoritos()
 
             // FILTRO POR TIPO DE COMIDA Y TOMO SOS BOTONES DEL DOM //
 
@@ -156,19 +166,6 @@ function cargaInicial() {
         }
     }
     )
-}
-
-
-// ----------> FUNC BUSCADOR - TOMO DEL STORAGE <----------- //
-
-function sacoStorage() {
-
-    let buscoItem = parse(sessionStorage.getItem)
-    if (buscoItem) {
-        inkItem(buscoItem)
-    } else {
-        nuevaCard();
-    }
 }
 
 
@@ -280,4 +277,41 @@ function filtroBuscado(index) {
            </div>
        </div>`)
 
+}
+
+
+function initMap(){
+    var options = {
+        center: {
+            lat: 41.390205,
+            lng: 2.154007
+        },
+        zoom: 16
+    }
+
+    map = new google.maps.Map(document.getElementById('map'), options);
+
+    function addMarker(property){
+        const marker = new google.maps.Marker({
+            position:property.location,
+            map:map,
+            //icon: property.imageIcon
+            });
+            // Check for custom Icon
+            
+            if(property.imageIcon){
+                // set image icon
+                marker.setIcon(property.imageIcon)
+            }
+
+            if(property.content){
+            const detailWindow = new google.maps.InfoWindow({
+            content: property.content
+    });
+    marker.addListener("mouseover", () =>{
+        detailWindow.open(map, marker);
+    })
+    }
+
+    }
 }

@@ -4,6 +4,7 @@
 @import "components/home";
 @import "components/find";
 @import "base/extends";
+@import "components/header";
 
 *{
     margin: 0;
@@ -11,6 +12,13 @@
     box-sizing: border-box;
 }
 
+
+#map{
+    width: 40%;
+    height: 100%;
+}
+
+// --------- HEADER INDEX --------- //
 
 
 .container-header{
@@ -78,6 +86,9 @@
 
 }
 
+
+// --------- HEADER EN FIND.HTML --------- //
+
 .find-header{
     padding-left: 3rem !important;
     padding-right: 3rem !important;
@@ -85,9 +96,13 @@
     padding-bottom: .5rem;
     z-index: 5;
 
+    .brand-name{
+        color: $colorPrincipal;
+    }
+
     a{
         text-decoration: none;
-        color: $colorPrincipal;
+        color: $colorSecundario;
         
         &:hover{
             text-decoration: underline;
@@ -119,6 +134,8 @@
     margin-bottom: 0%;
 } 
 
+ 
+// --------- HOME --------- //
 
 .home{
     position: absolute;
@@ -132,7 +149,7 @@
     .container-titulo{
         position: relative;
         z-index: 0;
-        top: -12rem;
+        top: -15rem;
 
         .titulo-home{
             margin-top: 7%;

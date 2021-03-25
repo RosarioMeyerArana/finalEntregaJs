@@ -41,14 +41,14 @@
   width: 30%;
 }
 
-.home .container-buscador .buscador .btn-submit, .btn-confirm, .btn-cancel, .section-cards .nav-filtros .lista-filtros .btn-filtro {
+.home .container-buscador .buscador .btn-submit, .modal-content .btn-confirm, .modal-content .btn-cancel, .section-cards .nav-filtros .lista-filtros .btn-filtro {
   border: 1px solid #f13c20;
   border-radius: 15px;
   padding: 0.4rem;
   color: #f13c20;
   background-color: transparent;
 }
-.home .container-buscador .buscador .btn-submit:hover, .btn-confirm:hover, .btn-cancel:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover {
+.home .container-buscador .buscador .btn-submit:hover, .modal-content .btn-confirm:hover, .modal-content .btn-cancel:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover {
   background-color: #f13c20;
   color: white;
 }
@@ -157,29 +157,69 @@
 }
 
 .fotoFav {
-  width: 150px;
+  width: 10rem;
 }
 
-.btn-confirm, .btn-cancel {
+.modal-content .modal-title {
+  font-family: "Poppins", sans-serif;
+  color: #f13c20;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.modal-content label {
+  font-size: 1rem;
+}
+.modal-content .btn-confirm, .modal-content .btn-cancel {
   font-size: 0.9rem;
 }
+.modal-content .titulo-confirm {
+  font-family: "Poppins", sans-serif;
+  color: #f13c20;
+  font-size: 2.1rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f13c20;
+}
+.modal-content .texto-confirm {
+  font-size: 1rem;
+}
 
-.home .container-buscador .buscador .btn-submit, .section-cards .nav-filtros .lista-filtros .btn-filtro, .btn-confirm, .btn-cancel {
+.home .container-buscador .buscador .btn-submit, .section-cards .nav-filtros .lista-filtros .btn-filtro, .modal-content .btn-confirm, .modal-content .btn-cancel {
   border: 1px solid #f13c20;
   border-radius: 15px;
   padding: 0.4rem;
   color: #f13c20;
   background-color: transparent;
 }
-.home .container-buscador .buscador .btn-submit:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover, .btn-confirm:hover, .btn-cancel:hover {
+.home .container-buscador .buscador .btn-submit:hover, .section-cards .nav-filtros .lista-filtros .btn-filtro:hover, .modal-content .btn-confirm:hover, .modal-content .btn-cancel:hover {
   background-color: #f13c20;
   color: white;
+}
+
+.container-fluid .text-marca {
+  color: #f13c20 !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-outline-secondary {
+  border-color: #f13c20 !important;
+  color: #f13c20 !important;
+}
+.btn-outline-secondary:hover {
+  background-color: #f13c20 !important;
+  border: none;
+  color: white !important;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#map {
+  width: 40%;
+  height: 100%;
 }
 
 .container-header {
@@ -236,9 +276,12 @@
   padding-bottom: 0.5rem;
   z-index: 5;
 }
+.find-header .brand-name {
+  color: #f13c20;
+}
 .find-header a {
   text-decoration: none;
-  color: #f13c20;
+  color: #545E75;
 }
 .find-header a:hover {
   text-decoration: underline;
@@ -276,7 +319,7 @@
 .home .container-titulo {
   position: relative;
   z-index: 0;
-  top: -12rem;
+  top: -15rem;
 }
 .home .container-titulo .titulo-home {
   margin-top: 7%;

@@ -150,12 +150,41 @@
 // ---------- FAVORITOS ----------//
 
 .fotoFav{
- width: 150px;
+ width: 10rem;
 }
 
 // ---------- MODAL ----------//
 
-.btn-confirm, .btn-cancel{
-    @extend %buttons;
-    font-size: .9rem;
+
+.modal-content{
+
+    .modal-title{
+        font-family: $font-ppal;
+        color: $colorPrincipal;
+        font-size: 1.5rem;
+        font-weight: 400;
+    
+    }
+
+    label{
+        font-size: 1rem;
+    }
+
+    .btn-confirm, .btn-cancel{
+        @extend %buttons;
+        font-size: .9rem;
+    }
+
+    .titulo-confirm{
+        font-family: $font-ppal;
+        color: $colorPrincipal;
+        font-size: 2.1rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $colorPrincipal;
+    }
+
+    .texto-confirm{
+        font-size: 1rem;
+    }
 }
