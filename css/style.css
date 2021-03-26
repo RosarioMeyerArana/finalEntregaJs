@@ -54,10 +54,16 @@
 }
 
 #map {
-  height: 89% !important;
+  height: 88% !important;
   width: 45%;
-  position: absolute !important;
+  position: fixed !important;
   right: 0;
+  top: 12%;
+  z-index: 3;
+}
+
+.container-header {
+  z-index: 99999 !important;
 }
 
 .container-buscador-header {
@@ -139,6 +145,13 @@
   color: #545E75;
 }
 
+.section-cards {
+  overflow: scroll;
+  height: 80vh;
+}
+.section-cards .nav-filtros {
+  margin-left: 5%;
+}
 .section-cards .nav-filtros .lista-filtros {
   display: flex;
 }

@@ -288,7 +288,7 @@ function initMap(){
             lat: 41.390205,
             lng: 2.154007
         },
-        zoom: 14
+        zoom: 12
     }
 
     map = new google.maps.Map(document.getElementById('map'), options);
@@ -296,6 +296,7 @@ function initMap(){
     for (let i = 0; i < restos.length; i++) {
         let cadaUno = restos[i];
         let location = new google.maps.LatLng(cadaUno.lat,cadaUno.lng)
+        addMarker(cadaUno);
         
     }
         
@@ -320,7 +321,7 @@ function initMap(){
                 }
     
     } 
-    addMarker(restos)
+    
 }
    /*
    for (let i = 0; i < restos.length; i++) {

@@ -4,12 +4,22 @@
 
 
 #map {
-    height: 89% !important;
+    height: 88% !important;
     width: 45%;
-    position: absolute !important;
+    position: fixed !important;
     right: 0;
+    top: 12%;
+    z-index: 3;
   }
 
+.container-header{
+   // position: fixed !important;
+    
+}
+
+.container-header{
+z-index: 99999 !important;
+}
 
 // --------- BUSCADOR EN HEADER --------- //
 
@@ -114,8 +124,12 @@
 // ----------- CARDS ---------- //
 
 .section-cards{
+    overflow: scroll;
+    height: 80vh;
+    
 
     .nav-filtros{
+        margin-left: 5%;
 
         .lista-filtros{
             display: flex;
