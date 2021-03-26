@@ -43,7 +43,7 @@ function listaFavoritos(){
 
         favoritos.forEach( resto => {
             $(divFavoritos).append(`<div class="dropdown-divider"></div>
-                                    <li class="mt-4 mb-2 px-4 li-favoritos d-flex justify-content-start">
+                                    <li class="mt-4 mb-4 px-4 li-favoritos d-flex justify-content-start">
                                     <div>
                                     <img class="fotoFav" src="images/restaurant-${resto.id}.jpg">
                                     </div>

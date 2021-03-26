@@ -13,15 +13,14 @@
 }
 
 
-#map{
-    width: 40%;
-    height: 100%;
-}
-
 // --------- HEADER INDEX --------- //
 
 
 .container-header{
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    padding-top: .4rem;
+    padding-bottom: .5rem;
     font-size: 15px;
     background-color: transparent;
     position: relative;
@@ -129,10 +128,21 @@
     }
 }
 
+
+// --------- FAVORITOS --------- //
+
+.titleFavs{
+    font-size: 1.7rem !important;
+    font-family: $font-ppal;
+    color: $colorPrincipal;
+    
+} 
+
 .title-fav{
     font-size: 1.5rem !important;
     margin-bottom: 0%;
-} 
+}
+
 
  
 // --------- HOME --------- //

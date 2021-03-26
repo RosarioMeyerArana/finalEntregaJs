@@ -53,6 +53,13 @@
   color: white;
 }
 
+#map {
+  height: 100%;
+  width: 30px;
+  position: relative;
+  z-index: 3;
+}
+
 .container-buscador-header {
   border-radius: 30px;
   border: 1px solid whitesmoke;
@@ -184,6 +191,14 @@
   font-size: 1rem;
 }
 
+.invalid-feedback-day {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
 .home .container-buscador .buscador .btn-submit, .section-cards .nav-filtros .lista-filtros .btn-filtro, .modal-content .btn-confirm, .modal-content .btn-cancel {
   border: 1px solid #f13c20;
   border-radius: 15px;
@@ -217,12 +232,11 @@
   box-sizing: border-box;
 }
 
-#map {
-  width: 40%;
-  height: 100%;
-}
-
 .container-header {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+  padding-top: 0.4rem;
+  padding-bottom: 0.5rem;
   font-size: 15px;
   background-color: transparent;
   position: relative;
@@ -300,6 +314,12 @@
 .find-header #divFavoritos .btn-favorito:hover {
   background-color: #f13c20;
   color: white;
+}
+
+.titleFavs {
+  font-size: 1.7rem !important;
+  font-family: "Poppins", sans-serif;
+  color: #f13c20;
 }
 
 .title-fav {

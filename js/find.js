@@ -130,7 +130,8 @@ function cargaInicial() {
             }
             buscadorPrincipal();
             ofertados();
-            listaFavoritos()
+            listaFavoritos();
+            initMap();
 
             // FILTRO POR TIPO DE COMIDA Y TOMO SOS BOTONES DEL DOM //
 
