@@ -62,10 +62,6 @@
   z-index: 3;
 }
 
-.container-header {
-  z-index: 99999 !important;
-}
-
 .container-buscador-header {
   border-radius: 30px;
   border: 1px solid whitesmoke;

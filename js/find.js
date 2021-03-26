@@ -104,7 +104,7 @@ function ofertados() {
 
         if (restos[i].oferta === true) {
            
-            $(".badges").append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
+            $(`.badges${restos[i].id}`).append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
         }
 
     }
@@ -188,7 +188,7 @@ function nuevaCard() {
                <div class="col-md-7">
                    <div class="card-body">
                       <div class="d-flex justify-content-between"> 
-                           <div class="badges"> 
+                           <div class="badges${resto.id}">
                            <span class="badge rounded-pill bg-secondary mb-3">${resto.tipo.toUpperCase()}</span>
                            </div>
                            <p>	&#11088 ${resto.calificacion}</p>
@@ -226,7 +226,7 @@ function filtrosComida(filtro) {
                <div class="col-md-7">
                    <div class="card-body">
                       <div class="d-flex justify-content-between"> 
-                        <div class="badges">
+                        <div class="badges${resto.id}">
                            <span class="badge rounded-pill bg-secondary mb-3">${resto.tipo.toUpperCase()}</span>
                         </div>
                            <p>	&#11088 ${resto.calificacion}</p>
@@ -263,7 +263,7 @@ function filtroBuscado(index) {
                <div class="col-md-7">
                    <div class="card-body">
                       <div class="d-flex justify-content-between"> 
-                        <div class="badges">
+                        <div class="badges${resto.id}">
                            <span class="badge rounded-pill bg-secondary mb-3">${buscado.tipo.toUpperCase()}</span>
                         </div>
                            <p>	&#11088 ${buscado.calificacion}</p>
@@ -307,18 +307,21 @@ function initMap(){
             
             position: restos.location,
             map:map,
-            icon: "https://img.icons8.com/nolan/2x/marker.png"
+            label: {
+                fontFamily: 'Fontawesome',
+                text: '\f3c5'
+            }
             });
             
-             if(restos.nombre){
-             const detailWindow = new google.maps.InfoWindow({
-                content: `<h2>${restos.nombre}</h2>`
-              });
+            //  if(restos.nombre){
+            //  const detailWindow = new google.maps.InfoWindow({
+            //     content: `<h2>${restos.nombre}</h2>`
+            //   });
 
-                marker.addListener("mouseover", () =>{
-                    detailWindow.open(map, marker);
-                    })
-                }
+            //     marker.addListener("mouseover", () =>{
+            //         detailWindow.open(map, marker);
+            //         })
+            //     }
     
     } 
     
