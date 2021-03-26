@@ -292,27 +292,31 @@ function initMap(){
 
     map = new google.maps.Map(document.getElementById('map'), options);
 
-    function addMarker(property){
-        const marker = new google.maps.Marker({
-            position:property.location,
-            map:map,
-            //icon: property.imageIcon
-            });
-            // Check for custom Icon
-            
-            if(property.imageIcon){
-                // set image icon
-                marker.setIcon(property.imageIcon)
-            }
+   
 
-            if(property.content){
-            const detailWindow = new google.maps.InfoWindow({
-            content: property.content
-    });
+    function addMarker(restos){
+        const marker = new google.maps.Marker({
+            position: {lat: 41.373021 , lng: 2.172749},
+            map:map,
+            icon: "https://img.icons8.com/nolan/2x/marker.png"
+            });
+            console.log(restos.location)
+            
+             if(restos.nombre){
+             const detailWindow = new google.maps.InfoWindow({
+             content: `<h2>${restos.nombre}</h2>`
+            });
+
     marker.addListener("mouseover", () =>{
         detailWindow.open(map, marker);
-    })
+        })
     }
 
-    }
+} 
 }
+   /*
+   for (let i = 0; i < restos.length; i++) {
+        addMarker(restos[i]);
+        
+    }
+    */

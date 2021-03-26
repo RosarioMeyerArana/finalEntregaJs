@@ -5,7 +5,8 @@
     "barrio": "Eixample",
     "calificacion": 7.9,
     "precioMedio": 35,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.394363 , lng: 2.165606" 
     },
 
     {"id": 2 , 
@@ -14,7 +15,8 @@
     "barrio": "Gracia",
     "calificacion": 8.3,
     "precioMedio": 20,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.401742, lng: 2.153266" 
     },
 
     {"id": 3 ,
@@ -23,7 +25,8 @@
     "barrio": "Born",
     "calificacion": 9.7,
     "precioMedio": 32,
-    "oferta": false 
+    "oferta": false,
+    "location":  "lat: 41.384538, lng: 2.181755"
     },
 
     {"id": 4 ,
@@ -32,7 +35,8 @@
     "barrio": "Eixample",
     "calificacion": 8.5,
     "precioMedio": 23,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.397325, lng: 2.161121" 
     },
 
     {"id": 5 ,
@@ -41,7 +45,8 @@
     "barrio": "Raval",
     "calificacion": 7.9,
     "precioMedio": 40,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.379861, lng: 2.168714" 
     },
 
     {"id": 6 ,
@@ -50,7 +55,8 @@
     "barrio": "Eixample",
     "calificacion": 9.9,
     "precioMedio": 55,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.390621, lng: 2.156293"  
     },
 
     {"id": 7 ,
@@ -59,7 +65,8 @@
     "barrio": "Les Corts",
     "calificacion": 8.8,
     "precioMedio": 35,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.389371, lng: 2.120016" 
     },
 
     {"id": 8 ,
@@ -68,7 +75,8 @@
     "barrio": "Gracia",
     "calificacion": 9.3,
     "precioMedio": 45,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.405170, lng: 2.160614" 
     },
 
     {"id": 9 ,
@@ -77,7 +85,8 @@
     "barrio": "Born",
     "calificacion": 7.8,
     "precioMedio": 28,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.384872, lng: 2.182956"  
     }, 
 
     {"id": 10 ,
@@ -86,7 +95,8 @@
     "barrio": "Eixample",
     "calificacion": 7.9,
     "precioMedio": 45,
-    "oferta": false 
+    "oferta": false,
+    "location":  "lat: 41.379507, lng: 2.153159"
     },
 
     {"id": 11 ,
@@ -95,7 +105,8 @@
     "barrio": "Gracia",
     "calificacion": 8.7,
     "precioMedio": 53,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.400579, lng: 2.161156"  
     },
 
     {"id": 12 ,
@@ -104,7 +115,8 @@
     "barrio": "Eixample",
     "calificacion": 10,
     "precioMedio": 60,
-    "oferta": false 
+    "oferta": false,
+    "location":  "lat: 41.403146, lng: 2.171597"
     },
 
     {"id": 13 ,
@@ -113,7 +125,8 @@
     "barrio": "Les Corts",
     "calificacion": 9.3,
     "precioMedio": 38,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.385346, lng: 2.131574"  
     },
 
     {"id": 14 ,
@@ -122,7 +135,8 @@
     "barrio": "Sarria",
     "calificacion": 7.9,
     "precioMedio": 34,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.397206, lng: 2.121322" 
     },
 
     {"id": 15 ,
@@ -131,7 +145,8 @@
     "barrio": "Gracia",
     "calificacion": 8.6,
     "precioMedio": 38,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.401524, lng: 2.156226"
     },
 
     {"id": 16 ,
@@ -140,7 +155,8 @@
     "barrio": "Gotico",
     "calificacion": 8.9,
     "precioMedio": 28,
-    "oferta": false
+    "oferta": false,
+    "location": "lat: 41.383404, lng: 2.178106"
     },
 
     {"id": 17 ,
@@ -149,7 +165,8 @@
     "barrio": "Born",
     "calificacion": 9.5,
     "precioMedio": 32,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.383670, lng: 2.183127" 
     },
 
     {"id": 18 ,
@@ -158,7 +175,8 @@
     "barrio": "Les Corts",
     "calificacion": 9.8,
     "precioMedio": 22,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.385063, lng: 2.121019"  
     },
 
     {"id": 19 ,
@@ -167,7 +185,8 @@
     "barrio": "Sarria",
     "calificacion": 8.7,
     "precioMedio": 20,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.398001, lng: 2.125333" 
     },
 
     {"id": 20 ,
@@ -176,7 +195,8 @@
     "barrio": "Gotico",
     "calificacion": 9.1,
     "precioMedio": 18,
-    "oferta": false
+    "oferta": false,
+    "location": "lat: 41.383543, lng: 2.176043"
     },
 
     {"id": 21 ,
@@ -185,7 +205,8 @@
     "barrio": "Sarria",
     "calificacion": 8.9,
     "precioMedio": 25,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.398713, lng: 2.119126" 
     },
 
     {"id": 22 ,
@@ -194,7 +215,8 @@
     "barrio": "Raval",
     "calificacion": 8.5,
     "precioMedio": 38,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.381787, lng: 2.166557" 
     },
 
     {"id": 23 ,
@@ -203,7 +225,8 @@
     "barrio": "Eixample",
     "calificacion": 9.6,
     "precioMedio": 46,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.398204, lng: 2.175599" 
     }, 
 
     {"id": 24 ,
@@ -212,7 +235,8 @@
     "barrio": "Gotico",
     "calificacion": 7.8,
     "precioMedio": 60,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.385440, lng: 2.171696" 
     },
 
     {"id": 25 ,
@@ -221,7 +245,8 @@
     "barrio": "Raval",
     "calificacion": 9.2,
     "precioMedio": 42, 
-    "oferta": false
+    "oferta": false,
+    "location": "lat: 41.380724, lng: 2.167512"
     },
 
     {"id": 26 ,
@@ -230,7 +255,8 @@
     "barrio": "Les Corts",
     "calificacion": 8.6,
     "precioMedio": 18,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.390580, lng: 2.131583"
     },
 
     {"id": 27 ,
@@ -239,6 +265,7 @@
     "barrio": "Montjuic",
     "calificacion": 7.9,
     "precioMedio": 18,
-    "oferta": false 
+    "oferta": false,
+    "location": "lat: 41.373021, lng: 2.172749"  
     }
 ]
