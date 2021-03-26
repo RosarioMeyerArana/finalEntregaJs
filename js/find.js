@@ -128,10 +128,11 @@ function cargaInicial() {
             } else {
                 nuevaCard();
             }
+            initMap();
             buscadorPrincipal();
             ofertados();
             listaFavoritos();
-            initMap();
+            
 
             // FILTRO POR TIPO DE COMIDA Y TOMO SOS BOTONES DEL DOM //
 
@@ -287,32 +288,39 @@ function initMap(){
             lat: 41.390205,
             lng: 2.154007
         },
-        zoom: 16
+        zoom: 14
     }
 
     map = new google.maps.Map(document.getElementById('map'), options);
 
-   
+    for (let i = 0; i < restos.length; i++) {
+        let cadaUno = restos[i];
+        let location = new google.maps.LatLng(cadaUno.lat,cadaUno.lng)
+        
+    }
+        
+
 
     function addMarker(restos){
         const marker = new google.maps.Marker({
-            position: {lat: 41.373021 , lng: 2.172749},
+            
+            position: restos.location,
             map:map,
             icon: "https://img.icons8.com/nolan/2x/marker.png"
             });
-            console.log(restos.location)
             
              if(restos.nombre){
              const detailWindow = new google.maps.InfoWindow({
-             content: `<h2>${restos.nombre}</h2>`
-            });
+                content: `<h2>${restos.nombre}</h2>`
+              });
 
-    marker.addListener("mouseover", () =>{
-        detailWindow.open(map, marker);
-        })
-    }
-
-} 
+                marker.addListener("mouseover", () =>{
+                    detailWindow.open(map, marker);
+                    })
+                }
+    
+    } 
+    addMarker(restos)
 }
    /*
    for (let i = 0; i < restos.length; i++) {

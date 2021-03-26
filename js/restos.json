@@ -236,7 +236,8 @@
     "calificacion": 7.8,
     "precioMedio": 60,
     "oferta": false,
-    "location": "lat: 41.385440, lng: 2.171696" 
+    "lat": "41.385440", 
+    "lng": "2.171696" 
     },
 
     {"id": 25 ,
@@ -246,7 +247,8 @@
     "calificacion": 9.2,
     "precioMedio": 42, 
     "oferta": false,
-    "location": "lat: 41.380724, lng: 2.167512"
+    "lat": "41.380724", 
+    "lng": "2.167512"
     },
 
     {"id": 26 ,
@@ -256,7 +258,8 @@
     "calificacion": 8.6,
     "precioMedio": 18,
     "oferta": false,
-    "location": "lat: 41.390580, lng: 2.131583"
+    "lat": "41.390580", 
+    "lng": "2.131583"
     },
 
     {"id": 27 ,
@@ -266,6 +269,7 @@
     "calificacion": 7.9,
     "precioMedio": 18,
     "oferta": false,
-    "location": "lat: 41.373021, lng: 2.172749"  
+    "lat": "41.373021", 
+    "lng": "2.172749"  
     }
 ]

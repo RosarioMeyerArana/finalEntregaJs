@@ -54,8 +54,10 @@
 }
 
 #map {
-  height: 100%;
-  width: 50%;
+  height: 89% !important;
+  width: 45%;
+  position: absolute !important;
+  right: 0;
 }
 
 .container-buscador-header {
