@@ -94,7 +94,6 @@ function findIndex(id){
 
 // ----------> OFERTA <----------- //
 
-let ofertas = []
 
 function ofertados() {
     for (let i = 0; i < restos.length; i++) {
@@ -103,8 +102,7 @@ function ofertados() {
         }
 
         if (restos[i].oferta === true) {
-           
-            $(`.badges${restos[i].id}`).append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
+           $(`.badges${restos[i].id}`).append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
         }
 
     }
@@ -129,8 +127,8 @@ function cargaInicial() {
                 nuevaCard();
             }
             initMap();
-            buscadorPrincipal();
             ofertados();
+            buscadorPrincipal();
             listaFavoritos();
             
 
@@ -178,6 +176,7 @@ function nuevaCard() {
     $("#todosCards").empty();
 
     restos.forEach(resto => {
+       
         $("#todosCards").append(
             `<div class="mt-4">
            <div class="card shadow ${resto.tipo}" style="max-width: 540px;">
@@ -214,8 +213,8 @@ nuevaCard();
 
 function filtrosComida(filtro) {
     $("#todosCards").empty();
-
-    filtro.forEach(resto => {
+    
+    filtro.forEach(resto => {  
         $("#todosCards").append(
             `<div class="mt-4">
            <div class="card shadow ${resto.tipo}" style="max-width: 540px;">
@@ -242,7 +241,7 @@ function filtrosComida(filtro) {
                </div>
            </div>
        </div>`)
-
+       
     })
 }
 
@@ -252,6 +251,7 @@ function filtroBuscado(index) {
     let buscado = restos[index]
     console.log(buscado);
     $("#todosCards").empty();
+    
 
     $("#todosCards").append(
         `<div class="mt-4">
@@ -263,7 +263,7 @@ function filtroBuscado(index) {
                <div class="col-md-7">
                    <div class="card-body">
                       <div class="d-flex justify-content-between"> 
-                        <div class="badges${resto.id}">
+                        <div class="badges${buscado.id}">
                            <span class="badge rounded-pill bg-secondary mb-3">${buscado.tipo.toUpperCase()}</span>
                         </div>
                            <p>	&#11088 ${buscado.calificacion}</p>
@@ -282,6 +282,9 @@ function filtroBuscado(index) {
 }
 
 
+
+// ----------> API MAPS <----------- //
+
 function initMap(){
     var options = {
         center: {
@@ -293,11 +296,15 @@ function initMap(){
 
     map = new google.maps.Map(document.getElementById('map'), options);
 
+    let location;
+    let cadaUno;
+
     for (let i = 0; i < restos.length; i++) {
-        let cadaUno = restos[i];
-        let location = new google.maps.LatLng(cadaUno.lat,cadaUno.lng)
+        cadaUno = restos[i];
+        location = restos[i].location;
         addMarker(cadaUno);
-        
+        console.log(location);
+
     }
         
 
@@ -326,9 +333,3 @@ function initMap(){
     } 
     
 }
-   /*
-   for (let i = 0; i < restos.length; i++) {
-        addMarker(restos[i]);
-        
-    }
-    */
