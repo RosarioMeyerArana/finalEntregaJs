@@ -24,26 +24,23 @@ class Pedidos {
 // ----------> FUNCION PARA TOMAR EL PEDIDO <----------- //
 
 
-let hoy = new Date().toISOString().slice(0, 10)
-
 function tomoInputs(){
     
     let inputNombre = $("#inputNombre").val();
     let numeroComensales = Number($('#inputPersonas option:selected').text());
     let inputDia = $('#seleccionDia').val();
     let horaSeleccionada = $('#seleccionHora option:selected').text();
-    //let restaurantSeleccionado = $("#exampleModalLabel").text().substr(14);
     let restaurantSeleccionado = $("#restoName").val();
 
 
-    if ((inputDia === "") || (inputDia < hoy)){
-        $('.invalid-feedback-day').show()
-    }
+    // if ((inputDia === "") || (inputDia < hoy)){
+    //     $('.invalid-feedback-day').show()
+    // }
     
     if((inputNombre === "")|| (inputNombre === undefined)) {
         $('.invalid-feedback').show()
     }else{
-        let diaSeleccionado = $('#seleccionDia').val().split("-");
+        let diaSeleccionado = $('#seleccionDia').val();
         inputPedidos.push(new Pedidos(inputNombre, restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales));
         console.log(inputPedidos);
         localStorage.pedidos = JSON.stringify(inputPedidos);
@@ -97,7 +94,8 @@ function modalShow(index){
     let modalReserva = restos[index];
     $("#exampleModal").empty();
 
-    $("#exampleModal").append(` <div class="modal-dialog modal-dialog-scrollable" id="modalReserva">
+    let hoy = moment().format('YYYY-MM-DD');
+   $("#exampleModal").append(` <div class="modal-dialog modal-dialog-scrollable" id="modalReserva">
                                     <div class="modal-content" id="modalContent">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Tu Reserva en ${modalReserva.nombre} </h5>
@@ -132,7 +130,7 @@ function modalShow(index){
                                         <div class="seleccion-dia mt-4 has-validation "> 
                                         <label class="mb-2">Seleccione el día a reservar</label>
                                             <div class="col-8 has-validation ">
-                                                <input class="form-control" type="date" id="seleccionDia"  required>
+                                                <input class="form-control" type="date" id="seleccionDia" value=${hoy} min=${hoy}  required>
                                                 <div class="invalid-feedback">
                                                 Por favor elegí una fecha válida.
                                                 </div>

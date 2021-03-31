@@ -256,7 +256,7 @@
     "calificacion": 8.6,
     "precioMedio": 18,
     "oferta": false,
-    "location": "lat: 41.390580, lng: 2.131583"
+    "location": {"lat": 41.390580, "lng": "2.131583"}
     },
 
     {"id": 27 ,

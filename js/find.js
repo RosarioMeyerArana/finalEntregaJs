@@ -104,7 +104,6 @@ function ofertados() {
         if (restos[i].oferta === true) {
            $(`.badges${restos[i].id}`).append(`<span class="badge rounded-pill bg-danger mb-3 badge-oferta">OFERTA</span>`) 
         }
-
     }
 }
 
@@ -241,8 +240,8 @@ function filtrosComida(filtro) {
                </div>
            </div>
        </div>`)
-       
     })
+    ofertados()
 }
 
 
@@ -314,10 +313,11 @@ function initMap(){
             
             position: restos.location,
             map:map,
-            label: {
-                fontFamily: 'Fontawesome',
-                text: '\f3c5'
-            }
+            icon: "https://img.icons8.com/nolan/2x/marker.png"
+            // label: {
+            //     fontFamily: "Fontawesome",
+            //     text: 'f3c5'
+            // }
             });
             
             //  if(restos.nombre){
