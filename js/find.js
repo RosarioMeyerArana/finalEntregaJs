@@ -1,3 +1,5 @@
+const { url } = require("node:inspector");
+
 restos = [];
 
 let buscadoIndex = localStorage.buscado ? JSON.parse(localStorage.getItem("buscado")) : false;
@@ -290,22 +292,21 @@ function initMap(){
             lat: 41.390205,
             lng: 2.154007
         },
-        zoom: 12
+        zoom: 13
     }
 
     map = new google.maps.Map(document.getElementById('map'), options);
 
     let location;
     let cadaUno;
+    let nombreMarker
 
     for (let i = 0; i < restos.length; i++) {
         cadaUno = restos[i];
         location = restos[i].location;
+        nombreMarker = restos[i].nombre;
         addMarker(cadaUno);
-        console.log(location);
-
     }
-        
 
 
     function addMarker(restos){
@@ -313,23 +314,27 @@ function initMap(){
             
             position: restos.location,
             map:map,
-            icon: "https://img.icons8.com/nolan/2x/marker.png"
-            // label: {
-            //     fontFamily: "Fontawesome",
-            //     text: 'f3c5'
-            // }
-            });
+            // icon:
+            //   label: {
+            //       fontFamily: "'Fontawesome'",
+            //       text: ''
+            //   },
+            animation: google.maps.Animation.DROP 
+        });
             
-            //  if(restos.nombre){
-            //  const detailWindow = new google.maps.InfoWindow({
-            //     content: `<h2>${restos.nombre}</h2>`
-            //   });
+             if(restos.nombre){
+             const detailWindow = new google.maps.InfoWindow({
+                content: `<p>${restos.nombre}</p>` })
+            }
 
-            //     marker.addListener("mouseover", () =>{
-            //         detailWindow.open(map, marker);
-            //         })
-            //     }
-    
-    } 
+                marker.addListener("mouseover", () =>{
+                    detailWindow.open(map, marker);
+                })
+                
+                // marker.addEventListener("click", () => {
+                //    findIndex()
+                //     filtroBuscado(index)
+                // });
+    }
     
 }
