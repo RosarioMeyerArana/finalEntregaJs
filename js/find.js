@@ -1,5 +1,3 @@
-const { url } = require("node:inspector");
-
 restos = [];
 
 let buscadoIndex = localStorage.buscado ? JSON.parse(localStorage.getItem("buscado")) : false;
@@ -292,7 +290,7 @@ function initMap(){
             lat: 41.390205,
             lng: 2.154007
         },
-        zoom: 13
+        zoom: 14
     }
 
     map = new google.maps.Map(document.getElementById('map'), options);
@@ -314,24 +312,21 @@ function initMap(){
             
             position: restos.location,
             map:map,
-            // icon:
-            //   label: {
-            //       fontFamily: "'Fontawesome'",
-            //       text: ''
-            //   },
             animation: google.maps.Animation.DROP 
         });
             
              if(restos.nombre){
              const detailWindow = new google.maps.InfoWindow({
                 content: `<p>${restos.nombre}</p>` })
-            }
 
                 marker.addListener("mouseover", () =>{
                     detailWindow.open(map, marker);
                 })
+            }
+
                 
-                // marker.addEventListener("click", () => {
+                
+                // marker.addListener("click", () => {
                 //    findIndex()
                 //     filtroBuscado(index)
                 // });
