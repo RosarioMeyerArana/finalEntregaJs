@@ -267,26 +267,38 @@
   background-color: transparent;
   position: relative;
   z-index: 5;
-  color: white;
 }
 .container-header .brand-name {
   font-size: 35px;
+  color: white;
 }
-.container-header a {
+.container-header .user-login i {
   text-decoration: none;
   color: white;
 }
-.container-header a:hover {
-  color: #f13c20;
+.container-header .user-login i:hover {
+  color: #f13c20 !important;
+}
+.container-header .register a {
+  text-decoration: none;
+  color: white;
+}
+.container-header .register a:hover {
+  color: #f13c20 !important;
+}
+.container-header .dropdown-item {
+  text-decoration: none !important;
+  color: #545E75 !important;
+}
+.container-header .dropdown-item:hover {
+  text-decoration: underline;
+  color: #f13c20 !important;
 }
 .container-header .user-login {
   margin-left: 2rem;
   font-size: 25px;
   background-color: transparent;
   border: none;
-}
-.container-header .user-login .dropdown-user a {
-  color: #545E75 !important;
 }
 .container-header #divFavoritos {
   width: 25rem !important;
@@ -316,12 +328,16 @@
   padding-bottom: 0.5rem;
   z-index: 5;
 }
-.find-header .brand-name {
-  color: #f13c20;
+.find-header .brand-name i {
+  color: #f13c20 !important;
+}
+.find-header i {
+  text-decoration: none;
+  color: #545E75 !important;
 }
 .find-header a {
   text-decoration: none;
-  color: #545E75;
+  color: #545E75 !important;
 }
 .find-header a:hover {
   text-decoration: underline;
@@ -334,7 +350,7 @@
   border: 1px solid #f13c20;
   border-radius: 10px;
   padding: 3.5px;
-  color: #f13c20;
+  color: #f13c20 !important;
   font-size: 0.9rem;
 }
 .find-header #divFavoritos .btn-favorito:hover {

@@ -28,15 +28,12 @@ var resultado = document.querySelector(".autocomplete");
      e.preventDefault();
  }
 
-
-
 // ----------> GUARDO EN STORAGE LINK DEL SEARCHBAR <----------- //
 
 let itemBuscado = localStorage.getItem("buscado", "buscado");
 
 
 function linkItem(id){
-    //e.preventDefault();
     itemBuscado = restos.find(i => i.id === id);
     console.log(itemBuscado);
     localStorage.buscado = JSON.stringify(itemBuscado)
@@ -65,5 +62,3 @@ function linkItem(id){
         });
     }
  }
-
-
