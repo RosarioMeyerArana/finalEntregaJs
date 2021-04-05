@@ -151,10 +151,10 @@ function modalShow(index){
                                     </div>
                                 </div>`)
 
-    $("#seleccionDia").change(function (e) { 
+    $("#seleccionDia").change(function(e){ 
         e.preventDefault();
         
-        let reservasResturant   = inputPedidos.filter(pedido => (pedido.idResto == modalReserva.id) && (pedido.dia === $("#seleccionDia").val()));
+        let reservasResturant = inputPedidos.filter(pedido => (pedido.idResto == modalReserva.id) && (pedido.dia === $("#seleccionDia").val()));
         let horariosUsados = reservasResturant.map(pedido => pedido.hora); 
         let disponibles = horarioDisponible.filter(x => !horariosUsados.includes(x));
         $("#seleccionHora").empty();
@@ -165,7 +165,6 @@ function modalShow(index){
         console.log(horariosUsados);
         console.log(reservasResturant);
         console.log(disponibles);
-        
                                  
     });
                                 

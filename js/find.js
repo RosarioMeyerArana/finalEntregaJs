@@ -277,7 +277,7 @@ function filtroBuscado(index) {
                </div>
            </div>
        </div>`)
-
+       ofertados()
 }
 
 
@@ -317,19 +317,20 @@ function initMap(){
             
              if(restos.nombre){
              const detailWindow = new google.maps.InfoWindow({
-                content: `<p>${restos.nombre}</p>` })
+                content: `<p onclick="findIndex(${restos.id})">${restos.nombre}</p>` })
 
                 marker.addListener("mouseover", () =>{
                     detailWindow.open(map, marker);
                 })
-            }
-
+            
+                 marker.addListener("click", () => {
+                    findIndex(`${restos.id}`)
+                 });
+            
+            
+            } 
                 
                 
-                // marker.addListener("click", () => {
-                //    findIndex()
-                //     filtroBuscado(index)
-                // });
     }
     
 }
