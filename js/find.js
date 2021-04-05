@@ -126,7 +126,6 @@ function cargaInicial() {
                 nuevaCard();
             }
             initMap();
-            ofertados();
             buscadorPrincipal();
             listaFavoritos();
             
@@ -158,6 +157,7 @@ function cargaInicial() {
             // FILTRO POR OFERTA //
 
             filtroOferta = restos.filter(i => i.oferta === true);
+            console.log(filtroOferta);
 
         },
         error: function (error, jqXHR, status) {
@@ -204,10 +204,11 @@ function nuevaCard() {
         );
 
     });
+    ofertados();
 }
 
 
-nuevaCard();
+// nuevaCard();
 
 
 function filtrosComida(filtro) {
@@ -278,9 +279,8 @@ function filtroBuscado(index) {
            </div>
        </div>`)
        ofertados()
+
 }
-
-
 
 // ----------> API MAPS <----------- //
 
@@ -334,3 +334,8 @@ function initMap(){
     }
     
 }
+
+
+$(document).on('click', function () {
+    $('.container-autocomplete-header').hide();
+});

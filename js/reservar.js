@@ -1,5 +1,5 @@
 
-let horarioDisponible = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
+// let horarioDisponible = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
 
 
 const inputPedidos = localStorage.pedidos ? JSON.parse(localStorage.pedidos) : [];
@@ -32,10 +32,6 @@ function tomoInputs(){
     let horaSeleccionada = $('#seleccionHora option:selected').text();
     let restaurantSeleccionado = $("#restoName").val();
 
-
-    // if ((inputDia === "") || (inputDia < hoy)){
-    //     $('.invalid-feedback-day').show()
-    // }
     
     if((inputNombre === "")|| (inputNombre === undefined)) {
         $('.invalid-feedback').show()
@@ -64,7 +60,7 @@ let confirmado
                                              <p class="texto-confirm">Detalles de tu reserva: <br>
                                              Nombre y Apellido: ${confirmado.nombreCliente} <br>
                                              Restaurant: ${confirmado.nombre} <br>
-                                             Día: ${confirmado.dia[2]}/${confirmado.dia[1]} <br>
+                                             Día: ${confirmado.dia.split("-")[2]}/${confirmado.dia.split("-")[1]}<br>
                                              Hora: ${confirmado.hora}<br>
                                              Nº de personas: ${confirmado.personas}</p>
                                              
@@ -86,16 +82,16 @@ function cancelElement(i) {
 
 $("btnCancel").click(cancelElement);
 
-
+let fecha
 
  // ----------> FUNCION MODAL <----------- //
 
-function modalShow(index){
+function modalShow(index) {
     let modalReserva = restos[index];
     $("#exampleModal").empty();
 
     let hoy = moment().format('YYYY-MM-DD');
-   $("#exampleModal").append(` <div class="modal-dialog modal-dialog-scrollable" id="modalReserva">
+    $("#exampleModal").append(` <div class="modal-dialog modal-dialog-scrollable" id="modalReserva">
                                     <div class="modal-content" id="modalContent">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Tu Reserva en ${modalReserva.nombre} </h5>
@@ -130,7 +126,7 @@ function modalShow(index){
                                         <div class="seleccion-dia mt-4 has-validation "> 
                                         <label class="mb-2">Seleccione el día a reservar</label>
                                             <div class="col-8 has-validation ">
-                                                <input class="form-control" type="date" id="seleccionDia" value=${hoy} min=${hoy}  required>
+                                                <input class="form-control" type="date" id="seleccionDia" value="" min=${hoy} onchange="changeDate(${restos.indexOf(modalReserva)})"  required>
                                                 <div class="invalid-feedback">
                                                 Por favor elegí una fecha válida.
                                                 </div>
@@ -141,7 +137,7 @@ function modalShow(index){
                                         <label class="mb-2">Seleccione el horario</label>
                                             <div class="col-8">
                                             <select class="form-control" name="" id="seleccionHora" required>
-                                            ${disponibleHorario()}</select>
+                                            ${disponibleHorario(restos.indexOf(modalReserva))}</select>
                                             </div>
                                         </div>
                                     </form>
@@ -151,43 +147,43 @@ function modalShow(index){
                                     </div>
                                 </div>`)
 
-    $("#seleccionDia").change(function(e){ 
-        e.preventDefault();
-        
-        let reservasResturant = inputPedidos.filter(pedido => (pedido.idResto == modalReserva.id) && (pedido.dia === $("#seleccionDia").val()));
-        let horariosUsados = reservasResturant.map(pedido => pedido.hora); 
-        let disponibles = horarioDisponible.filter(x => !horariosUsados.includes(x));
-        $("#seleccionHora").empty();
-        disponibles.forEach(horario => {
-            $("#seleccionHora").append(`<option value"${horario}">${horario}</option>`);
-        });
-        //let reservasHoy = reservasResturant.filter(pedido  => pedido.dia === e.target.value);
-        console.log(horariosUsados);
-        console.log(reservasResturant);
-        console.log(disponibles);
-                                 
-    });
-                                
+
     $("#exampleModal").modal("show");
+}
+
+function changeDate(id) {
+    fecha = $("#seleccionDia").val()
+    disponibleHorario(id)
 }
 
 
 
-function disponibleHorario(){
-    html = "";
+function disponibleHorario(id) {
+    let input = document.getElementById("seleccionHora") ? document.getElementById("seleccionHora") : undefined
 
-    // for (let i = 0; i < inputPedidos.length; i++) {
-    //     const horarioTomado = inputPedidos[i].hora;
-    // }
-    
-    //horarioDisponible.filter(i => i)
- 
-    horarioDisponible.forEach(horario => {
-     html += `<option value"${horario}">${horario}</option>`
-    })
+    let resto = restos[id]
+    let restoHorarios = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
+    console.log(restoHorarios);
+    let pedidosExistentes = JSON.parse(localStorage.pedidos)
 
-    return html
- }
-
-
+    let existen = pedidosExistentes.filter(e => e.nombre === resto.nombre);
+    console.log(existen);
+    let existenMasFecha = existen.filter(e => e.dia == fecha)
+    console.log(existenMasFecha);
+    for (let index = 0; index < existenMasFecha.length; index++) {
+        const element = existenMasFecha[index].hora
+        let ind = restoHorarios.indexOf(element)
+        restoHorarios.splice(ind, 1)
+    }
+    if(input){
+        input.innerHTML = ""
+        restoHorarios.forEach(e => {
+            let option = document.createElement("option")
+            option.value = e;
+            option.innerHTML = e;
+            input.appendChild(option)
+        })
+    }
+    console.log(restoHorarios);
+}
 
