@@ -160,7 +160,7 @@ let pedidosExistentes
 
 
 function disponibleHorario(id) {
-    let input = document.getElementById("seleccionHora") ? document.getElementById("seleccionHora") : []
+    let input = document.getElementById("seleccionHora") ? document.getElementById("seleccionHora") : undefined
 
     let resto = restos[id]
     let restoHorarios = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
