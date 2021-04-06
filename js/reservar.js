@@ -38,7 +38,7 @@ function tomoInputs(){
     }else{
         let diaSeleccionado = $('#seleccionDia').val();
         inputPedidos.push(new Pedidos(inputNombre, restaurantSeleccionado, diaSeleccionado, horaSeleccionada, numeroComensales));
-        console.log(inputPedidos);
+        
         localStorage.pedidos = JSON.stringify(inputPedidos);
         confirmaPedido()
     } 
@@ -156,20 +156,22 @@ function changeDate(id) {
     disponibleHorario(id)
 }
 
+let pedidosExistentes
 
 
 function disponibleHorario(id) {
-    let input = document.getElementById("seleccionHora") ? document.getElementById("seleccionHora") : undefined
+    let input = document.getElementById("seleccionHora") ? document.getElementById("seleccionHora") : []
 
     let resto = restos[id]
     let restoHorarios = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
-    console.log(restoHorarios);
-    let pedidosExistentes = JSON.parse(localStorage.pedidos)
+    
+    pedidosExistentes = JSON.parse(localStorage.pedidos)
+
 
     let existen = pedidosExistentes.filter(e => e.nombre === resto.nombre);
-    console.log(existen);
+    
     let existenMasFecha = existen.filter(e => e.dia == fecha)
-    console.log(existenMasFecha);
+
     for (let index = 0; index < existenMasFecha.length; index++) {
         const element = existenMasFecha[index].hora
         let ind = restoHorarios.indexOf(element)
@@ -184,6 +186,6 @@ function disponibleHorario(id) {
             input.appendChild(option)
         })
     }
-    console.log(restoHorarios);
+    
 }
 
