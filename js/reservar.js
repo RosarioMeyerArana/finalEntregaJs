@@ -165,7 +165,7 @@ function disponibleHorario(id) {
     let resto = restos[id]
     let restoHorarios = ["19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"]
     
-    pedidosExistentes = JSON.parse(localStorage.pedidos)
+    pedidosExistentes = localStorage.pedidos ? JSON.parse(localStorage.pedidos) : []
 
 
     let existen = pedidosExistentes.filter(e => e.nombre === resto.nombre);
